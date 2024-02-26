@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:expendid/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -243,7 +244,7 @@ class MainScreen extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: transactionsData.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 12.0),
@@ -266,7 +267,7 @@ class MainScreen extends StatelessWidget {
                                       width: 30,
                                       height: 30,
                                       decoration: BoxDecoration(
-                                        color: Colors.yellow[700],
+                                        color: transactionsData[index]['color'],
                                         shape: BoxShape.circle,
                                       ),
                                     ),
