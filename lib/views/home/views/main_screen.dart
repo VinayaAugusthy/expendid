@@ -254,7 +254,7 @@ class MainScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: const EdgeInsets.all(12),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -264,24 +264,21 @@ class MainScreen extends StatelessWidget {
                                   alignment: Alignment.center,
                                   children: [
                                     Container(
-                                      width: 30,
-                                      height: 30,
+                                      width: size.width / 8,
+                                      height: size.width / 8,
                                       decoration: BoxDecoration(
                                         color: transactionsData[index]['color'],
                                         shape: BoxShape.circle,
                                       ),
                                     ),
-                                    const Icon(
-                                      Icons.food_bank,
-                                      color: Colors.white,
-                                    ),
+                                    transactionsData[index]['icon'],
                                   ],
                                 ),
                                 const SizedBox(
                                   width: 12,
                                 ),
                                 Text(
-                                  'Food',
+                                  transactionsData[index]['name'],
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 14,
@@ -295,7 +292,7 @@ class MainScreen extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  '-\$45.00',
+                                  transactionsData[index]['totalAmount'],
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 14,
@@ -305,7 +302,7 @@ class MainScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'Today',
+                                  transactionsData[index]['date'],
                                   style: TextStyle(
                                     fontWeight: FontWeight.w100,
                                     fontSize: 14,
