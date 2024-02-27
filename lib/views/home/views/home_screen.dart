@@ -12,9 +12,16 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-int index = 0;
-
 class _HomeScreenState extends State<HomeScreen> {
+  int index = 0;
+  late Color selectedItem;
+  Color unSelectedItem = Colors.grey;
+  @override
+  void initState() {
+    selectedItem = Theme.of(context).colorScheme.primary;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
